@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue-slider</title>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <script src="https://unpkg.com/vue@3"></script>
+
+    <div id="app">
+        <header>
+            <h1>
+                Vue Slider
+            </h1>
+        </header>
+
+        <div class="wrapper">
+            <div class="slide">
+                <img :src="images[activeIndex]" alt="series-image">
+                <div class="thumbnails">
+                    <div class="thumbnail" v-for="(image, index) in images">
+                        <img :src="image" alt="series-image thumbnail"
+                        :class="index === activeIndex ? 'active' : ''" >
+                    </div>
+                </div>
+                <div class="description">
+                    <h2>
+                       Title :
+                    </h2>
+                    <p>
+                        Text : 
+                    </p>
+                </div>
+                
+
+                <div class="slider-button prev" @click="previousSlide()">
+                    <i class="fa-solid fa-circle-chevron-left"></i>
+                </div>
+                <div class="slider-button next" @click="nextSlide()">
+                    <i class="fa-solid fa-circle-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
