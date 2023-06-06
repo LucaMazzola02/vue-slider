@@ -23,7 +23,7 @@
             </h1>
         </header>
 
-        <div class="wrapper">
+        <div class="wrapper" @mouseenter="stopAutoplay" @mouseleave="startAutoplay">
             <div class="slide">
                 <img :src="images[activeIndex]" alt="series-image">
                 <div class="thumbnails">
